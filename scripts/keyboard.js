@@ -21,7 +21,7 @@ export default class keyboard {
       if (this.symbols.includes(e.key.toUpperCase())) {
 
         this.answer.split("").forEach((letter, key) => {
-          if (e.key === letter.toLowerCase()) {
+          if (e.key.toLowerCase() === letter.toLowerCase()) {
             letters[key].innerText = e.key.toUpperCase()
             this.correctLettersCounter += 1
           }
@@ -29,7 +29,7 @@ export default class keyboard {
   
         const buttons = document.querySelectorAll(".keyboard__button")
   
-        if (!this.answer.toLowerCase().includes(e.key)) {
+        if (!this.answer.toLowerCase().includes(e.key.toLowerCase())) {
           
           this.addBodyPart(this.attempt)
           this.attempt += 1
